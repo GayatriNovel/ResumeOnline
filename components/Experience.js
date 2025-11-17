@@ -76,68 +76,14 @@ const roles = [
   },
 ];
 
-const Experience = ({ selectedSkill }) => {
-  return (
-    <div className="space-y-6">
-      <header className="space-y-1">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-100">
-          Experience
-        </h2>
-        <p className="text-sm text-slate-400">
-          Roles where you’ve shaped products, aligned teams and delivered
-          outcomes.
-        </p>
-        {selectedSkill && (
-          <p className="text-xs md:text-sm text-amber-200 mt-2">
-            <p className="text-sm text-slate-400">
-  Roles demonstrating experience with this skill.</p>:{" "}
-            <span className="font-medium">{selectedSkill}</span>
-          </p>
-        )}
-      </header>
+export default function Experience({ selectedSkill, onClearSkill }) {
+  const highlightedRoles =
+    selectedSkill != null
+      ? roles.filter((role) => role.skills?.includes(selectedSkill))
+      : roles;
 
-      <div className="divide-y divide-slate-800">
-        {roles.map((role) => {
-          const isHighlighted =
-            selectedSkill && role.skills?.includes(selectedSkill);
+  const highlightCount =
+    selectedSkill != null ? highlightedRoles.length : null;
 
-          return (
-            <article
-              key={`${role.title}-${role.company}`}
-              className={[
-                "py-4 first:pt-0 last:pb-0 transition rounded-xl px-3 -mx-3 md:-mx-4",
-                isHighlighted
-                  ? "bg-slate-700/80 border border-amber-300/80 shadow-lg shadow-amber-500/30"
-                  : "border border-transparent hover:bg-slate-700/40",
-              ].join(" ")}
-            >
-              <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
-                <h3 className="text-base md:text-lg font-semibold text-slate-50">
-                  {role.title}
-                </h3>
-                <p className="text-xs md:text-sm text-slate-400 md:text-right">
-                  {role.period}
-                </p>
-              </div>
-
-              <p className="text-sm text-slate-400 mt-0.5">{role.company}</p>
-
-              <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-slate-300">
-                {role.summary}
-              </p>
-
-              {isHighlighted && (
-                <p className="mt-2 text-xs text-amber-200/90">
-                  This role demonstrates experience in {" "}
-                  <span className="font-medium">{selectedSkill}</span> skillset.
-                </p>
-              )}
-            </article>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
-
-export default Experience;
+  const countLabel =
+    highlightCount == null
