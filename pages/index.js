@@ -48,6 +48,10 @@ export default function Home() {
     scrollTo("experience");
   };
 
+  const clearSelectedSkill = () => {
+  setSelectedSkill(null);
+};
+
   // Scroll spy
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -186,7 +190,10 @@ export default function Home() {
             className="scroll-mt-32"
           >
             <div className="rounded-3xl border border-slate-300/70 bg-slate-800/85 text-slate-50 shadow-xl shadow-slate-900/25 backdrop-blur-md p-6 md:p-8">
-              <Experience selectedSkill={selectedSkill} />
+              <Experience
+  selectedSkill={selectedSkill}
+  onClearSkill={clearSelectedSkill}
+/>
             </div>
           </motion.section>
 
