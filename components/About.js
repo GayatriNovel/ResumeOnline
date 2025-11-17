@@ -8,23 +8,28 @@ export default function About() {
       </h1>
 
       <p className="text-slate-300">
-        I’m a dedicated professional passionate about building modern, efficient,
-        and elegant digital experiences. With hands-on expertise across design,
-        development, and user experience, my focus is always on creating
-        solutions that feel intuitive, purposeful, and technically sound.
+        I’m a Product Owner with a strong focus on delivering meaningful,
+        human-centred digital experiences. I thrive in environments where
+        cross-team collaboration, clarity of purpose, and continuous iteration
+        drive real impact. Bringing people together — designers, engineers,
+        business teams, customers — and aligning everyone toward a shared
+        outcome is where I’m at my best.
       </p>
 
       <p className="text-slate-300">
-        I enjoy working with frontend technologies like React, Next.js, Tailwind
-        CSS, and modern UI patterns. My approach blends clean aesthetics with
-        real-world usability, ensuring the interfaces I create are both visually
-        appealing and deeply practical.
+        My work blends strategy, product thinking, and hands-on execution.
+        I’m highly comfortable working with modern AI tools, SQL, GitHub, and
+        data-driven workflows that support faster decision-making and smarter
+        product development. Whether it's shaping a roadmap, refining user
+        stories, or enabling engineering teams with the right context, I bring
+        structure and momentum to every project.
       </p>
 
       <p className="text-slate-300">
-        Outside of work, I love exploring emerging technologies, improving my
-        design workflow, and experimenting with new creative concepts that push
-        the boundaries of what a portfolio site can feel like.
+        Outside of my professional life, I love reading, writing, and painting —
+        creative outlets that help me stay curious, grounded, and inspired. They
+        influence the way I think about design, storytelling, and the emotional
+        elements that make great products feel meaningful and intuitive.
       </p>
     </div>
   );
