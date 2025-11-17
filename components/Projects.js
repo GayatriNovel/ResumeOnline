@@ -41,6 +41,19 @@ const Projects = () => {
 
       <ul className="space-y-3">
         {projects.map((project) => (
-          <li
-            key={project.name}
-            className="rounded-xl border border-slate-800/80 bg-slate-900/80
+         <li
+  key={project.name}
+  className="rounded-xl border border-slate-300/40 bg-slate-800/85 text-slate-100 shadow-lg shadow-slate-900/30 backdrop-blur-md p-4 md:p-5 transition hover:-translate-y-1 hover:shadow-2xl"
+>
+  <h3 className="text-base md:text-lg font-semibold text-white">
+    {project.name}
+  </h3>
+
+  <p className="mt-1 text-xs md:text-sm text-slate-300">
+    {project.context}
+  </p>
+
+  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-slate-200">
+    {project.description}
+  </p>
+</li>
