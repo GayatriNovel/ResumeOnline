@@ -127,7 +127,7 @@ const Experience = ({ selectedSkill }) => {
 
               {isHighlighted && (
                 <p className="mt-2 text-xs text-amber-200/90">
-                  This role contributed to your{" "}
+                  This role demonstrates experience in {" "}
                   <span className="font-medium">{selectedSkill}</span> skillset.
                 </p>
               )}
