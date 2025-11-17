@@ -16,6 +16,12 @@ const PROFILE = {
   avatarSrc: "/avatar.jpg", // make sure this exists in /public
 };
 
+// 🔧 Edit this to match your resume file name in /public
+const RESUME = {
+  href: "/Gayatri_Mane_Resume.pdf",
+  label: "Download Resume",
+};
+
 const SECTION_KEYS = ["about", "experience", "projects", "skills", "contact"];
 
 export default function Home() {
@@ -85,8 +91,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f5e6d7] to-[#e2c8b3] text-slate-900 relative overflow-hidden">
       {/* Background decorative blobs */}
-      <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-tr from-indigo-300 via-sky-300 to-emerald-200 opacity-40 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 -left-24 h-80 w-80 rounded-full bg-gradient-to-tr from-pink-300 via-rose-200 to-amber-200 opacity-40 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-tr from-amber-200 via-rose-200 to-emerald-100 opacity-40 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 -left-24 h-80 w-80 rounded-full bg-gradient-to-tr from-amber-200 via-orange-200 to-pink-200 opacity-40 blur-3xl" />
 
       {/* HEADER */}
       <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-slate-800/95 backdrop-blur">
@@ -119,19 +125,30 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Top nav buttons */}
-          <nav className="flex flex-wrap gap-2">
-            {SECTION_KEYS.map((key) => (
-              <button
-                key={key}
-                type="button"
-                onClick={() => scrollTo(key)}
-                className={navButtonClasses(key)}
-              >
-                {key[0].toUpperCase() + key.slice(1)}
-              </button>
-            ))}
-          </nav>
+          {/* Right: nav + resume */}
+          <div className="flex items-center gap-3">
+            <nav className="flex flex-wrap gap-2">
+              {SECTION_KEYS.map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => scrollTo(key)}
+                  className={navButtonClasses(key)}
+                >
+                  {key[0].toUpperCase() + key.slice(1)}
+                </button>
+              ))}
+            </nav>
+
+            {/* Resume download button */}
+            <a
+              href={RESUME.href}
+              download
+              className="hidden sm:inline-flex items-center rounded-full bg-amber-400 px-4 py-1.5 text-sm font-medium text-slate-900 shadow-md shadow-amber-500/40 hover:bg-amber-300 transition"
+            >
+              {RESUME.label}
+            </a>
+          </div>
         </div>
       </header>
 
