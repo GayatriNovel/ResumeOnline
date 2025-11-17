@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'public/avatar.jpg'
 import Experience from '../components/Experience'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
