@@ -1,3 +1,5 @@
+<p className="code-label text-cyan-300 mb-1">Senior Product Manager · AI & Data</p>
+
 const Experience = () => {
   const roles = [
     {
