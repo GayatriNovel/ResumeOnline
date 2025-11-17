@@ -139,10 +139,10 @@ export default function Home() {
         <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <p className="code-label text-cyan-300 mb-1">
-              Product Portfolio · Interactive
+             {/*  Product Portfolio · Interactive*/}
             </p>
             <h1 className="text-xl md:text-2xl font-semibold text-white">
-              Navigate through sections like turning pages.
+               {/* Navigate through sections like turning pages.*/}
             </h1>
           </div>
           <nav className="flex flex-wrap gap-2">
