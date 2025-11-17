@@ -9,14 +9,14 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// 🔧 Edit these for your profile
+// Profile
 const PROFILE = {
   name: "Gayatri Mane",
   title: "Product Owner | AI Enthusiast",
-  avatarSrc: "/avatar.jpg", // make sure this exists in /public
+  avatarSrc: "/avatar.jpg",
 };
 
-// 🔧 Resume configuration
+// Resume file in /public
 const RESUME = {
   href: "/Gayatri_Mane_Resume.pdf",
   label: "Download Resume",
@@ -48,7 +48,7 @@ export default function Home() {
     scrollTo("experience");
   };
 
-  // Scroll spy – highlight active section in top nav
+  // Scroll spy
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -63,10 +63,7 @@ export default function Home() {
           }
         }
       },
-      {
-        root: null,
-        threshold: 0.3,
-      }
+      { root: null, threshold: 0.3 }
     );
 
     SECTION_KEYS.forEach((key) => {
@@ -96,18 +93,17 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f5e6d7] to-[#e2c8b3] text-slate-900 relative overflow-hidden">
-      {/* Background decorative blobs */}
+      {/* Background blobs */}
       <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-tr from-amber-200 via-rose-200 to-emerald-100 opacity-40 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 -left-24 h-80 w-80 rounded-full bg-gradient-to-tr from-amber-200 via-orange-200 to-pink-200 opacity-40 blur-3xl" />
 
       {/* HEADER */}
       <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-slate-800/95 backdrop-blur">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 gap-4">
-          {/* Left: avatar + name + title */}
+          {/* Avatar + name + title */}
           <div className="flex items-center gap-3">
             {PROFILE.avatarSrc && (
               <div className="relative h-11 w-11">
-                {/* Animated halo */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-indigo-400 via-pink-400 to-amber-300 opacity-60 blur-md animate-pulse" />
                 <div className="relative h-11 w-11 overflow-hidden rounded-full border border-slate-900 bg-slate-900 shadow-md">
                   <Image
@@ -131,7 +127,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: nav + resume */}
+          {/* Nav + resume */}
           <div className="flex items-center gap-3">
             <nav className="flex flex-wrap gap-2">
               {SECTION_KEYS.map((key) => (
@@ -146,7 +142,6 @@ export default function Home() {
               ))}
             </nav>
 
-            {/* Resume download button */}
             <a
               href={RESUME.href}
               download
@@ -249,7 +244,7 @@ export default function Home() {
             </div>
           </motion.section>
 
-          {/* Interests – bottom card */}
+          {/* Interests */}
           <div className="mt-10 rounded-2xl border border-slate-300/70 bg-white/70 backdrop-blur-md shadow-md p-4 md:p-6">
             <p className="text-sm md:text-base font-medium text-slate-700 mb-2">
               Beyond work
