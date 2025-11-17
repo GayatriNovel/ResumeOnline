@@ -9,8 +9,8 @@ import Image from "next/image";
 
 // 🔧 Edit these details to match you + your avatar in /public
 const PROFILE = {
-  name: "Your Name",
-  title: "Your Title (e.g. Software Engineer | AI Enthusiast)",
+  name: "Gayatri Mane",
+  title: "Product Owner | AI Enthusiast ",
   // Put your image file in /public (e.g. /public/avatar.jpg) and update this path:
   avatarSrc: "/avatar.jpg",
 };
