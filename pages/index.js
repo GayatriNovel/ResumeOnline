@@ -249,4 +249,36 @@ export default function Home() {
             </div>
           </motion.section>
 
-          {/
+          {/* Interests – bottom card */}
+          <div className="mt-10 rounded-2xl border border-slate-300/70 bg-white/70 backdrop-blur-md shadow-md p-4 md:p-6">
+            <p className="text-sm md:text-base font-medium text-slate-700 mb-2">
+              Beyond work
+            </p>
+            <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-slate-700">
+              <span className="flex items-center gap-1">
+                <span>📚</span>
+                <span>Loves reading</span>
+              </span>
+              <span className="flex items-center gap-1">
+                <span>✍️</span>
+                <span>Enjoys creative writing</span>
+              </span>
+              <span className="flex items-center gap-1">
+                <span>🎨</span>
+                <span>Passionate about painting</span>
+              </span>
+            </div>
+          </div>
+
+          {/* FOOTER */}
+          <footer className="pt-6 border-t border-slate-300/60 text-xs md:text-sm text-slate-500 flex flex-wrap gap-2 justify-between">
+            <span>
+              © {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
+            </span>
+            <span>Portfolio · Product Ownership · AI & Data</span>
+          </footer>
+        </main>
+      </div>
+    </div>
+  );
+}
