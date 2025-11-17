@@ -134,25 +134,6 @@ export default function Home() {
             ))}
           </nav>
         </div>
-
-        {/* Interests strip */}
-        <div className="border-t border-slate-700/60 bg-slate-900/90">
-          <div className="max-w-6xl mx-auto flex flex-wrap items-center gap-4 px-4 py-2 text-xs md:text-sm text-slate-200/90">
-            <span className="font-medium text-slate-100">Beyond work:</span>
-            <span className="flex items-center gap-1">
-              <span>📚</span>
-              <span>Loves reading</span>
-            </span>
-            <span className="flex items-center gap-1">
-              <span>✍️</span>
-              <span>Enjoys creative writing</span>
-            </span>
-            <span className="flex items-center gap-1">
-              <span>🎨</span>
-              <span>Passionate about painting</span>
-            </span>
-          </div>
-        </div>
       </header>
 
       {/* MAIN LAYOUT */}
@@ -262,6 +243,27 @@ export default function Home() {
               <Contact />
             </div>
           </motion.section>
+    {/* Interests – moved to bottom */}
+<div className="mt-10 rounded-2xl border border-slate-300/70 bg-white/70 backdrop-blur-md shadow-md p-4 md:p-6">
+  <p className="text-sm md:text-base font-medium text-slate-700 mb-2">
+    Beyond work
+  </p>
+  <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-slate-700">
+    <span className="flex items-center gap-1">
+      <span>📚</span>
+      <span>Loves reading</span>
+    </span>
+    <span className="flex items-center gap-1">
+      <span>✍️</span>
+      <span>Enjoys creative writing</span>
+    </span>
+    <span className="flex items-center gap-1">
+      <span>🎨</span>
+      <span>Passionate about painting</span>
+    </span>
+  </div>
+</div>
+
 
           {/* FOOTER */}
           <footer className="pt-6 border-t border-slate-300/60 text-xs md:text-sm text-slate-500 flex flex-wrap gap-2 justify-between">
