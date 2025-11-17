@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-50">
+   <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-slate-900 to-slate-800 text-slate-100">
       {/* TOP NAV */}
       <header className="sticky top-0 z-20 border-b border-slate-800 bg-slate-950/70 backdrop-blur">
         <div className="max-w-5xl mx-auto flex items-center justify-between px-4 py-3 gap-4">
