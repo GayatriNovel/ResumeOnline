@@ -87,3 +87,91 @@ export default function Experience({ selectedSkill, onClearSkill }) {
 
   const countLabel =
     highlightCount == null
+      ? ""
+      : highlightCount === 0
+      ? "No roles found"
+      : `${highlightCount} role${highlightCount > 1 ? "s" : ""} found`;
+
+  return (
+    <div className="space-y-6">
+      {/* Header */}
+      <header className="space-y-1 mb-2">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-100">
+          Experience
+        </h2>
+
+        <p className="text-sm text-slate-400">
+          Roles demonstrating product leadership and delivery outcomes.
+        </p>
+
+        {selectedSkill && (
+          <div className="mt-2 flex flex-wrap items-center gap-3">
+            <p className="text-sm text-amber-300">
+              Highlighting roles demonstrating experience with:{" "}
+              <span className="font-medium text-amber-200">
+                {selectedSkill}
+              </span>
+            </p>
+
+            {countLabel && (
+              <span className="text-xs text-amber-200/90 bg-amber-400/10 border border-amber-300/40 rounded-full px-3 py-1">
+                {countLabel}
+              </span>
+            )}
+
+            {onClearSkill && (
+              <button
+                type="button"
+                onClick={onClearSkill}
+                className="text-xs md:text-sm rounded-full border border-amber-300/60 bg-transparent px-3 py-1 text-amber-200 hover:bg-amber-400/10 transition"
+              >
+                Clear filter
+              </button>
+            )}
+          </div>
+        )}
+      </header>
+
+      {/* Roles */}
+      <div className="divide-y divide-slate-800/60">
+        {roles.map((role) => {
+          const isHighlighted =
+            selectedSkill && role.skills?.includes(selectedSkill);
+
+          return (
+            <article
+              key={`${role.title}-${role.company}`}
+              className={[
+                "py-4 first:pt-0 last:pb-0 px-3 -mx-3 md:-mx-4 rounded-xl transition-all duration-300",
+                isHighlighted
+                  ? "bg-slate-700/80 border border-amber-300/80 shadow-lg shadow-amber-500/30 ring-1 ring-amber-300/60"
+                  : "border border-transparent hover:bg-slate-700/40",
+              ].join(" ")}
+            >
+              <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
+                <h3 className="text-base md:text-lg font-semibold text-slate-50">
+                  {role.title}
+                </h3>
+                <p className="text-xs md:text-sm text-slate-400 md:text-right">
+                  {role.period}
+                </p>
+              </div>
+
+              <p className="text-sm text-slate-400 mt-0.5">{role.company}</p>
+
+              <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-slate-300">
+                {role.summary}
+              </p>
+
+              {isHighlighted && (
+                <p className="mt-3 text-xs text-amber-300 bg-amber-400/10 border border-amber-300/40 rounded-md px-3 py-2">
+                  This role demonstrates experience in {selectedSkill}.
+                </p>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
