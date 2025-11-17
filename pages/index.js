@@ -1,4 +1,4 @@
-import Image from 'public/avatar'
+import Image from '../public/avatar'
 import Experience from '../components/Experience'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
