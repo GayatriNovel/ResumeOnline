@@ -30,10 +30,13 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("about");
 
   const scrollTo = (key) => {
-    sections[key]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    sections[key]?.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
-  // Scroll spy – highlight active section in sidebar/top nav
+  // Scroll spy – highlight active section in top nav
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -68,18 +71,14 @@ export default function Home() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const navButtonClasses = (key, vertical = false) =>
+  const navButtonClasses = (key) =>
     [
       "transition",
       "cursor-pointer",
-      vertical ? "w-full text-left text-sm" : "text-sm",
+      "text-sm",
       "rounded-full",
       activeSection === key
-        ? vertical
-          ? "bg-indigo-600 text-white shadow-md px-3 py-1.5"
-          : "bg-indigo-600 text-white shadow-sm px-3 py-1.5"
-        : vertical
-        ? "bg-white/60 text-slate-700 border border-slate-300 hover:bg-white px-3 py-1.5"
+        ? "bg-indigo-600 text-white shadow-sm px-3 py-1.5"
         : "bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 px-3 py-1.5",
     ].join(" ");
 
@@ -127,7 +126,7 @@ export default function Home() {
                 key={key}
                 type="button"
                 onClick={() => scrollTo(key)}
-                className={navButtonClasses(key, false)}
+                className={navButtonClasses(key)}
               >
                 {key[0].toUpperCase() + key.slice(1)}
               </button>
@@ -136,29 +135,9 @@ export default function Home() {
         </div>
       </header>
 
-      {/* MAIN LAYOUT */}
-      <div className="max-w-6xl mx-auto px-4 py-10 lg:py-12 flex gap-6">
-        {/* Floating sidebar – desktop only */}
-        <aside className="hidden lg:flex flex-col w-40 pt-4 sticky top-32 h-fit">
-          <p className="mb-3 text-xs uppercase tracking-wide text-slate-500">
-            Sections
-          </p>
-          <div className="flex flex-col gap-1">
-            {SECTION_KEYS.map((key) => (
-              <button
-                key={key}
-                type="button"
-                onClick={() => scrollTo(key)}
-                className={navButtonClasses(key, true)}
-              >
-                {key[0].toUpperCase() + key.slice(1)}
-              </button>
-            ))}
-          </div>
-        </aside>
-
-        {/* Main content */}
-        <main className="w-full lg:flex-1 space-y-12 md:space-y-16">
+      {/* MAIN CONTENT */}
+      <div className="max-w-6xl mx-auto px-4 py-10 lg:py-12">
+        <main className="space-y-12 md:space-y-16">
           {/* ABOUT */}
           <motion.section
             ref={sections.about}
@@ -243,31 +222,33 @@ export default function Home() {
               <Contact />
             </div>
           </motion.section>
-    {/* Interests – moved to bottom */}
-<div className="mt-10 rounded-2xl border border-slate-300/70 bg-white/70 backdrop-blur-md shadow-md p-4 md:p-6">
-  <p className="text-sm md:text-base font-medium text-slate-700 mb-2">
-    Beyond work
-  </p>
-  <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-slate-700">
-    <span className="flex items-center gap-1">
-      <span>📚</span>
-      <span>Loves reading</span>
-    </span>
-    <span className="flex items-center gap-1">
-      <span>✍️</span>
-      <span>Enjoys creative writing</span>
-    </span>
-    <span className="flex items-center gap-1">
-      <span>🎨</span>
-      <span>Passionate about painting</span>
-    </span>
-  </div>
-</div>
 
+          {/* Interests – bottom card */}
+          <div className="mt-10 rounded-2xl border border-slate-300/70 bg-white/70 backdrop-blur-md shadow-md p-4 md:p-6">
+            <p className="text-sm md:text-base font-medium text-slate-700 mb-2">
+              Beyond work
+            </p>
+            <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-slate-700">
+              <span className="flex items-center gap-1">
+                <span>📚</span>
+                <span>Loves reading</span>
+              </span>
+              <span className="flex items-center gap-1">
+                <span>✍️</span>
+                <span>Enjoys creative writing</span>
+              </span>
+              <span className="flex items-center gap-1">
+                <span>🎨</span>
+                <span>Passionate about painting</span>
+              </span>
+            </div>
+          </div>
 
           {/* FOOTER */}
           <footer className="pt-6 border-t border-slate-300/60 text-xs md:text-sm text-slate-500 flex flex-wrap gap-2 justify-between">
-            <span>© {new Date().getFullYear()} {PROFILE.name}. All rights reserved.</span>
+            <span>
+              © {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
+            </span>
             <span>Portfolio · Product Ownership · AI & Data</span>
           </footer>
         </main>
