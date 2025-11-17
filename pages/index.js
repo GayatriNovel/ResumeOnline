@@ -16,7 +16,7 @@ const PROFILE = {
   avatarSrc: "/avatar.jpg", // make sure this exists in /public
 };
 
-// 🔧 Edit this to match your resume file name in /public
+// 🔧 Resume configuration
 const RESUME = {
   href: "/Gayatri_Mane_Resume.pdf",
   label: "Download Resume",
@@ -34,12 +34,18 @@ export default function Home() {
   };
 
   const [activeSection, setActiveSection] = useState("about");
+  const [selectedSkill, setSelectedSkill] = useState(null);
 
   const scrollTo = (key) => {
     sections[key]?.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
+  };
+
+  const handleSkillClick = (skill) => {
+    setSelectedSkill(skill);
+    scrollTo("experience");
   };
 
   // Scroll spy – highlight active section in top nav
@@ -185,7 +191,7 @@ export default function Home() {
             className="scroll-mt-32"
           >
             <div className="rounded-3xl border border-slate-300/70 bg-slate-800/85 text-slate-50 shadow-xl shadow-slate-900/25 backdrop-blur-md p-6 md:p-8">
-              <Experience />
+              <Experience selectedSkill={selectedSkill} />
             </div>
           </motion.section>
 
@@ -219,7 +225,10 @@ export default function Home() {
             className="scroll-mt-32"
           >
             <div className="rounded-3xl border border-slate-300/70 bg-slate-800/85 text-slate-50 shadow-xl shadow-slate-900/25 backdrop-blur-md p-6 md:p-8">
-              <Skills />
+              <Skills
+                onSkillClick={handleSkillClick}
+                selectedSkill={selectedSkill}
+              />
             </div>
           </motion.section>
 
@@ -240,36 +249,4 @@ export default function Home() {
             </div>
           </motion.section>
 
-          {/* Interests – bottom card */}
-          <div className="mt-10 rounded-2xl border border-slate-300/70 bg-white/70 backdrop-blur-md shadow-md p-4 md:p-6">
-            <p className="text-sm md:text-base font-medium text-slate-700 mb-2">
-              Beyond work
-            </p>
-            <div className="flex flex-wrap items-center gap-4 text-sm md:text-base text-slate-700">
-              <span className="flex items-center gap-1">
-                <span>📚</span>
-                <span>Loves reading</span>
-              </span>
-              <span className="flex items-center gap-1">
-                <span>✍️</span>
-                <span>Enjoys creative writing</span>
-              </span>
-              <span className="flex items-center gap-1">
-                <span>🎨</span>
-                <span>Passionate about painting</span>
-              </span>
-            </div>
-          </div>
-
-          {/* FOOTER */}
-          <footer className="pt-6 border-t border-slate-300/60 text-xs md:text-sm text-slate-500 flex flex-wrap gap-2 justify-between">
-            <span>
-              © {new Date().getFullYear()} {PROFILE.name}. All rights reserved.
-            </span>
-            <span>Portfolio · Product Ownership · AI & Data</span>
-          </footer>
-        </main>
-      </div>
-    </div>
-  );
-}
+          {/
