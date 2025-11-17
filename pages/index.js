@@ -84,7 +84,7 @@ export default function Home() {
     ].join(" ");
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-100 via-slate-100 to-slate-200 text-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#fafafa] via-[#f5e6d7] to-[#e2c8b3] text-slate-900 relative overflow-hidden">
       {/* Background decorative blobs */}
       <div className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-tr from-indigo-300 via-sky-300 to-emerald-200 opacity-40 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 -left-24 h-80 w-80 rounded-full bg-gradient-to-tr from-pink-300 via-rose-200 to-amber-200 opacity-40 blur-3xl" />
