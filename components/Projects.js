@@ -1,4 +1,4 @@
-// components_Projects.js
+// components/Projects.js
 
 const projects = [
   {
@@ -27,33 +27,27 @@ const projects = [
   },
 ];
 
-const Projects = () => {
+export default function Projects() {
   return (
-    <div className="space-y-6">
-      <header className="space-y-1">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-100">
-          Featured Projects
-        </h2>
-        <p className="text-sm text-slate-400">
-          Selected work across AI, data, product strategy and delivery.
-        </p>
-      </header>
+    <section id="projects" className="my-8">
+      <h2 className="text-2xl font-bold text-slate-100 mb-4">
+        Featured Projects
+      </h2>
 
-      <ul className="space-y-3">
+      <ul className="space-y-4">
         {projects.map((project) => (
-         <li
-  key={project.name}
-  className="rounded-xl border border-slate-300/40 bg-slate-800/85 text-slate-100 shadow-lg shadow-slate-900/30 backdrop-blur-md p-4 md:p-5 transition hover:-translate-y-1 hover:shadow-2xl"
->
-  <h3 className="text-base md:text-lg font-semibold text-white">
-    {project.name}
-  </h3>
-
-  <p className="mt-1 text-xs md:text-sm text-slate-300">
-    {project.context}
-  </p>
-
-  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-slate-200">
-    {project.description}
-  </p>
-</li>
+          <li
+            key={project.name}
+            className="border rounded-xl p-4 bg-slate-700/50 backdrop-blur text-slate-100 shadow-lg"
+          >
+            <h3 className="font-semibold text-lg">{project.name}</h3>
+            <p className="text-sm text-slate-300">{project.context}</p>
+            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+              {project.description}
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
