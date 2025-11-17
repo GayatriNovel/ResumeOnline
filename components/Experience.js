@@ -90,8 +90,7 @@ const Experience = ({ selectedSkill }) => {
         {selectedSkill && (
           <p className="text-xs md:text-sm text-amber-200 mt-2">
             <p className="text-sm text-slate-400">
-  Roles demonstrating experience with this skill.
-</p>:{" "}
+  Roles demonstrating experience with this skill.</p>:{" "}
             <span className="font-medium">{selectedSkill}</span>
           </p>
         )}
