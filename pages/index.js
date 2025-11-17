@@ -61,35 +61,36 @@ export default function Home() {
             <button
               type="button"
               onClick={() => scrollTo("about")}
-              className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 shadow-sm shadow-slate-950/50 transition hover:-translate-y-px hover:bg-slate-800/90"
-            >
+              className="rounded-full border border-gray-300 bg-white px-3 py-1 text-sm text-gray-700 shadow-sm transition hover:bg-gray-100 hover:border-gray-400"
+                >
               About
             </button>
+
             <button
               type="button"
               onClick={() => scrollTo("experience")}
-              className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 shadow-sm shadow-slate-950/50 transition hover:-translate-y-px hover:bg-slate-800/90"
+              className="rounded-full border border-gray-300 bg-white px-3 py-1 text-sm text-gray-700 shadow-sm transition hover:bg-gray-100 hover:border-gray-400"
             >
               Experience
             </button>
             <button
               type="button"
               onClick={() => scrollTo("projects")}
-              className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 shadow-sm shadow-slate-950/50 transition hover:-translate-y-px hover:bg-slate-800/90"
+             className="rounded-full border border-gray-300 bg-white px-3 py-1 text-sm text-gray-700 shadow-sm transition hover:bg-gray-100 hover:border-gray-400"
             >
               Projects
             </button>
             <button
               type="button"
               onClick={() => scrollTo("skills")}
-              className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 shadow-sm shadow-slate-950/50 transition hover:-translate-y-px hover:bg-slate-800/90"
+              className="rounded-full border border-gray-300 bg-white px-3 py-1 text-sm text-gray-700 shadow-sm transition hover:bg-gray-100 hover:border-gray-400"
             >
               Skills
             </button>
             <button
               type="button"
               onClick={() => scrollTo("contact")}
-              className="rounded-full border border-slate-700/70 bg-slate-900/60 px-3 py-1 shadow-sm shadow-slate-950/50 transition hover:-translate-y-px hover:bg-slate-800/90"
+              className="rounded-full border border-gray-300 bg-white px-3 py-1 text-sm text-gray-700 shadow-sm transition hover:bg-gray-100 hover:border-gray-400"
             >
               Contact
             </button>
