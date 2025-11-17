@@ -44,7 +44,7 @@ const Skills = ({ onSkillClick, selectedSkill }) => {
               type="button"
               onClick={() => handleClick(skill)}
               className={[
-                "text-xs md:text-sm rounded-full px-3 py-1.5 transition border",
+                "text-xs md:text-sm rounded-full px-3 py-1.5 transition border cursor-pointer",
                 "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-slate-800",
                 isActive
                   ? "bg-indigo-500 text-white border-indigo-400 shadow-md shadow-indigo-500/40"
